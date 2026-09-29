@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviator 2-Step Predictor - Hacker Safait</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+        body {
+            background-color: #0b0711;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: #140d21;
+            border: 1px solid #ff007f33;
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.2);
+            border-radius: 20px;
+            padding: 24px;
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+        }
+        .header {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #ff007f;
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+            margin-bottom: 4px;
+        }
+        .sub-header {
+            font-size: 0.75rem;
+            color: #a89ec1;
+            margin-bottom: 20px;
+        }
+        .signal-box {
+            background: #0d0716;
+            border: 2px dashed #ff007f88;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .step-title {
+            font-size: 0.8rem;
+            color: #00ffcc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+        .multiplier {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #ff007f;
+            margin: 8px 0;
+            text-shadow: 0 0 15px rgba(255, 0, 127, 0.8);
+        }
+        .step-two-box {
+            background: #1c132d;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 0.85rem;
+            color: #ffcc00;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .btn {
+            background: linear-gradient(135deg, #ff007f, #7900ff);
+            color: #ffffff;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4);
+            transition: 0.2s;
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+        .footer {
+            margin-top: 16px;
+            font-size: 0.7rem;
+            color: #6a5e87;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">AVIATOR PREDICTOR</div>
+        <div class="sub-header">2-Step Safety Matrix | Dev Safait</div>
+
+        <div class="signal-box">
+            <div class="step-title" id="statusLabel">PRIMARY SIGNAL (STEP 1)</div>
+            <div class="multiplier" id="primaryTarget">--.--x</div>
+            
+            <div class="step-two-box">
+                <span>Step 2 Backup:</span>
+                <strong id="secondaryTarget">--.--x</strong>
+            </div>
+        </div>
+
+        <button class="btn" onclick="generate2StepSignal()">GET 2-STEP SIGNAL</button>
+
+        <div class="footer">
+            ⚠️ Simulation Tool for Developer Portfolio & GitHub Pages.
+        </div>
+    </div>
+
+    <script>
+        function generate2StepSignal() {
+            const primary = document.getElementById('primaryTarget');
+            const secondary = document.getElementById('secondaryTarget');
+            const status = document.getElementById('statusLabel');
+
+            status.innerText = "ANALYZING MATRIX...";
+            primary.style.color = "#ffcc00";
+            primary.innerText = "WAIT...";
+            secondary.innerText = "--.--x";
+
+            setTimeout(() => {
+                // Step 1 Signal (Target: 2.10x - 3.80x)
+                let step1Val = (Math.random() * (3.80 - 2.10) + 2.10).toFixed(2);
+                
+                // Step 2 Backup Signal (Target: 4.00x - 6.50x)
+                let step2Val = (Math.random() * (6.50 - 4.00) + 4.00).toFixed(2);
+
+                status.innerText = "PRIMARY SIGNAL (STEP 1)";
+                primary.style.color = "#ff007f";
+                primary.innerText = step1Val + "x";
+                secondary.innerText = step2Val + "x";
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
